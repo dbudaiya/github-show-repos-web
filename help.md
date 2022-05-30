@@ -1,4 +1,5 @@
 ## 问题解答
+[setup props](https://blog.csdn.net/lijiahui_/article/details/122725791)
 
 ## 资源记录
 

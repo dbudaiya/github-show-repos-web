@@ -5,6 +5,7 @@ import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
 import Pages from 'vite-plugin-pages'
 import Components from 'unplugin-vue-components/vite'
+import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
 import AutoImport from 'unplugin-auto-import/vite'
 import Unocss from 'unocss/vite'
 
@@ -18,7 +19,10 @@ export default defineConfig({
     Vue({
       reactivityTransform: true,
     }),
-
+    
+    Components({
+      resolvers: [NaiveUiResolver()]
+    }),
     // https://github.com/hannoeru/vite-plugin-pages
     Pages(),
 
@@ -29,6 +33,9 @@ export default defineConfig({
         'vue/macros',
         'vue-router',
         '@vueuse/core',
+      ],
+      resolvers: [
+        NaiveUiResolver(),
       ],
       dts: true,
       dirs: [
